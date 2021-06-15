@@ -23,22 +23,22 @@ function askQuestion() {
   console.log(`Your Answer: ${candidateAnswers}`);
   console.log(`Correct response: ${correctAnswers[i]}\n`);
   if (candidateAnswers.toLowerCase() === correctAnswers.join('|').toLowerCase().split('|')[i]) 
-  score++;
+  numberOfCorrectAnswers++;
   }
 }
 
 function gradeQuiz(candidateAnswers) {
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  let gradeQuiz = (score / 5) * 100;
+  let gradeQuiz = (numberOfCorrectAnswers / questions.length) * 100;
   let grade = gradeQuiz;
-  console.log(`>>> Overall Grade: ${grade}% (${score} of ${questions.length} responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${questions.length} responses correct) <<<`);
   if (grade >= passingGrade) {
   console.log(`>>> Status: PASSED <<<`);
   } else { console.log(`>>> Staus: FAILED <<< `) }
   return grade;
 }
 
-let score = 0;
+let numberOfCorrectAnswers = "";
 let passingGrade = 80;
 
 function runProgram() {
