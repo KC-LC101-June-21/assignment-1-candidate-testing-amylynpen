@@ -31,14 +31,13 @@ function gradeQuiz(candidateAnswers) {
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
   let grade = (numberOfCorrectAnswers / questions.length) * 100;
   console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${questions.length} responses correct) <<<`);
-  if (grade >= passingGrade) {
+  if (grade >= 80) {
   console.log(`>>> Status: PASSED <<<`);
   } else { console.log(`>>> Staus: FAILED <<< `) }
   return grade;
 }
 
 let numberOfCorrectAnswers = "";
-let passingGrade = 80;
 
 function runProgram() {
   askForName();
