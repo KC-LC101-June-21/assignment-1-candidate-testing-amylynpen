@@ -12,31 +12,28 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = '';
 
-let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
+let questions = ["1) Who was the first American woman in space? ", "2) True or false: 5 kilometer == 5000 meters? ", "3) (5 + 3)/2 * 10 = ? ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = '';
 
   // TODO 1.1b: Ask for candidate's name //
-  
-function askForName() { 
+
+function askForName() {
   candidateName = input.question('Please enter your name: ')
+  return `Candidate Name: ${candidateName}`;
 }
+
+console.log(askForName(candidateName));
+
 
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-
-
-
- // candidateAnswers = input.question(questions)
-
 function askQuestion() {
-  for (let i = 0; i < 5; i++)
-  candidateAnswers = input.question(`${questions[i]}`);
-
-  console.log(candidateAnswers);
+  //for (let i = 0; i < correctAnswers.length; i++)
+  //candidateAnswers = input.question(`${questions[i]}\n`);
+  candidateAnswers = input.question(questions[i]); 
+  console.log(`Your Answer: ${candidateAnswers[i]}`);
 }
-
-
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
 
@@ -52,13 +49,22 @@ function gradeQuiz(candidateAnswers) {
   return grade;
 }
 
+  // >>> Overall Grade: 40% (2 of 5 responses correct) <<<
+  // >>> Status: FAILED <<<
+
   // TODO 1.1c: Ask for candidate's name //
 
 function runProgram() {
-  askForName();
-  console.log('Hello,' , candidateName + '!')
+  //askForName();
   askQuestion();
   gradeQuiz(this.candidateAnswers);
+}
+
+for (i = 0; i < questions.length; i++)  {
+  //console.log`"Candidate Name:", ${candidateName}`;
+  console.log(questions[i]);
+  console.log(`Your Answer: ${candidateAnswers[i]}`);
+  console.log(`Correct Answer: ${correctAnswers[i]}\n`);
 }
 
 // Don't write any code below this line //
