@@ -29,8 +29,7 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  let gradeQuiz = (numberOfCorrectAnswers / questions.length) * 100;
-  let grade = gradeQuiz;
+  let grade = (numberOfCorrectAnswers / questions.length) * 100;
   console.log(`>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${questions.length} responses correct) <<<`);
   if (grade >= passingGrade) {
   console.log(`>>> Status: PASSED <<<`);
